@@ -2,7 +2,7 @@ public class Hora {
 
     protected int hora;
     protected int minutos;
-    private int segundos;
+    protected int segundos;
 
     // Constructor por defecto
     public Hora() {
