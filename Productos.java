@@ -75,7 +75,7 @@ public class Productos {
                 System.out.println("No puedes comprar tanta cantidad");
 
             } else {
-                this.cantidad -= cantidad;
+                this.cantidad += cantidad;
             }
         } else {
 

@@ -39,8 +39,8 @@ public class Departamentos {
     void mostrarEmpleados() {
 
         System.out.println("Los empleados del departamento " + getNombreDepartamento() + " trabajan los empleados: ");
-        for (Empleados e : this.empleados) {
-            System.out.println("- " + e);
+        for (Empleados e : empleados) {
+            System.out.println("- " + e.getNombre());
         }
     }
 
