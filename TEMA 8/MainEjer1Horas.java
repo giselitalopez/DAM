@@ -9,7 +9,7 @@ public class MainEjer1Horas {
 
         HoraExacta horaExacta = new HoraExacta(15, 34, 23);
 
-        System.out.println(horaExacta.toString());
+        // mostrar la hora con el public void mostrarHora
         horaExacta.inc();
         System.out.println(horaExacta.toString());
     }

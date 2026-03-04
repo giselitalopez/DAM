@@ -34,11 +34,6 @@ public class HoraExacta extends Hora {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Hora: " + this.hora + ":" + this.minuto + ":" + this.segundos;
-    }
-
     public void mostrarHora() {
         System.out.println("Hora: " + this.hora + ":" + this.segundos);
     }
