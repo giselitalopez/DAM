@@ -10,7 +10,7 @@ public class mainInmueble {
         // mostrarCasa(sc);
         // comprar(sc);
         // soyVendedor(sc);
-        // pedirInfoPiso(sc);
+        pedirInfoPiso(sc);
 
     }
 
@@ -182,26 +182,26 @@ public class mainInmueble {
         Piso piso = new Piso();
 
         System.out.println("Escriba su nombre y apellidos");
-        piso.nombreDueno = sc.nextLine();
+        piso.setNombreDueno(sc.nextLine());
         System.out.println("Escriba su número de teléfono");
-        piso.contactoDueno = sc.nextLine();
+        piso.setContactoDueno(sc.nextLine());
         System.out.println("Escriba la dirección del inmueble");
-        piso.direccion = sc.nextLine();
+        piso.setDireccion(sc.nextLine());
         System.out.println("¿Qué número de planta es? Si es planta baja, ponga '0'");
         piso.setPlanta(sc.nextInt());
         System.out.println("Introduzca los metros cuadrados de su piso");
-        piso.metrosCuadrados = sc.nextDouble();
+        piso.setMetrosCuadrados(sc.nextDouble());
         System.out.println(
                 "Introduzca el precio del metro cuadrado en euros de la zona. Lo revisamos para ofrecer el mejor precio del mercado (si no sabe el precio del metro cuadrado, ponga uno estimado)");
-        piso.precioBase = sc.nextDouble();
+        piso.setPrecioBase(sc.nextDouble());
         System.out.println("¿El piso es de segunda mano? \n(1) SI \n(2) NO");
         opcion = sc.nextInt();
         opcion = validarOpcion(sc, opcion);
 
         if (opcion == 1) {
-            piso.segundaMano = true;
+            piso.setSegundaMano(true);
         } else if (opcion == 2) {
-            piso.segundaMano = false;
+            piso.setSegundaMano(false);
         }
 
         System.out.println("¿El piso tiene ascensor? \n(1) SI \n(2) NO");

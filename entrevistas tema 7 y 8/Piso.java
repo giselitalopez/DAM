@@ -9,7 +9,7 @@ public class Piso extends Inmueble {
         this.tieneAscensor = false;
     }
 
-    public Piso(boolean planta, boolean tieneAscensor) {
+    public Piso(int planta, boolean tieneAscensor) {
         this.planta = 0;
         this.tieneAscensor = tieneAscensor;
     }
