@@ -3,12 +3,14 @@ import java.util.Scanner;
 public class mainInmueble {
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
+
         // opcionPiso();
         // opcionCasa();
         // opcionLocal();
-        comprar();
-        // soyVendedor();
-        // pedirInfoPiso();
+        comprar(sc);
+        // soyVendedor(sc);
+        // pedirInfoPiso(sc);
 
     }
 
@@ -17,6 +19,7 @@ public class mainInmueble {
         Inmueble piso = new Piso(150, 2300, "Calle Turquesa, 23, Bajo Izquierda", "Alejandro Perez", "642080864",
                 false, 3, true);
 
+        piso.mostrarInformacion();
         System.out.println("Su inmueble está valorado en: " + piso.calcularPrecioFinal() + " euros.");
         piso.llamarDueno();
 
@@ -27,6 +30,7 @@ public class mainInmueble {
         // ejemplo de casa con jardín y casa no adosada
 
         Inmueble casa = new Casa(235, 3000, "Calle Amatista, 36", "Pepa Garcia", "684016573", true, true, 2, false);
+        casa.mostrarInformacion();
         System.out.println("Su inmueble está valorado en: " + casa.calcularPrecioFinal() + " euros.");
         casa.llamarDueno();
     }
@@ -35,13 +39,13 @@ public class mainInmueble {
 
         Inmueble local = new Local(80, 500, "Calle San Fernando, 45", "Jose Perez", "654326754", true, "Restaurante",
                 true);
+        local.mostrarInformacion();
         System.out.println("Su inmueble está valorado en: " + local.calcularPrecioFinal() + " euros.");
         local.llamarDueno();
 
     }
 
-    private static void mostrarPiso() {
-        Scanner sc = new Scanner(System.in);
+    private static void mostrarPiso(Scanner sc) {
 
         Inmueble piso = new Piso(150, 2300, "Calle Turquesa, 23, Bajo Izquierda", "Alejandro Perez", "642080864",
                 false, 3, true);
@@ -50,11 +54,7 @@ public class mainInmueble {
 
         System.out.println("¿Quiere contactar con el dueño del inmueble? \n(1) SI \n(2) NO");
         int opcion = sc.nextInt();
-
-        while (opcion != 1 && opcion != 2) {
-            System.out.println("Escriba una opción válida");
-            opcion = sc.nextInt();
-        }
+        opcion = validarOpcion(sc, opcion);
 
         if (opcion == 1) {
             piso.llamarDueno();
@@ -63,9 +63,7 @@ public class mainInmueble {
 
     }
 
-    private static void mostrarCasa() {
-
-        Scanner sc = new Scanner(System.in);
+    private static void mostrarCasa(Scanner sc) {
 
         Inmueble casa = new Casa(235, 3000, "Calle Amatista, 36", "Pepa Garcia", "684016573", true, true, 2, false);
         casa.mostrarInformacion();
@@ -73,11 +71,7 @@ public class mainInmueble {
 
         System.out.println("¿Quiere contactar con el dueño del inmueble? \n(1) SI \n(2) NO");
         int opcion = sc.nextInt();
-
-        while (opcion != 1 && opcion != 2) {
-            System.out.println("Escriba una opción válida");
-            opcion = sc.nextInt();
-        }
+        opcion = validarOpcion(sc, opcion);
 
         if (opcion == 1) {
             casa.llamarDueno();
@@ -85,9 +79,7 @@ public class mainInmueble {
         }
     }
 
-    private static void mostrarLocal() {
-
-        Scanner sc = new Scanner(System.in);
+    private static void mostrarLocal(Scanner sc) {
 
         Inmueble local = new Local(80, 500, "Calle San Fernando, 45", "Jose Perez", "654326754", true, "Restaurante",
                 true);
@@ -96,11 +88,7 @@ public class mainInmueble {
 
         System.out.println("¿Quiere contactar con el dueño del inmueble? \n(1) SI \n(2) NO");
         int opcion = sc.nextInt();
-
-        while (opcion != 1 && opcion != 2) {
-            System.out.println("Escriba una opción válida");
-            opcion = sc.nextInt();
-        }
+        opcion = validarOpcion(sc, opcion);
 
         if (opcion == 1) {
             local.llamarDueno();
@@ -109,9 +97,8 @@ public class mainInmueble {
 
     }
 
-    private static void comprar() {
+    private static void comprar(Scanner sc) {
 
-        Scanner sc = new Scanner(System.in);
         int opcion;
 
         System.out.println(
@@ -129,19 +116,19 @@ public class mainInmueble {
 
                 case 1:
 
-                    mostrarCasa();
+                    mostrarCasa(sc);
 
                     break;
 
                 case 2:
 
-                    mostrarPiso();
+                    mostrarPiso(sc);
 
                     break;
 
                 case 3:
 
-                    mostrarLocal();
+                    mostrarLocal(sc);
 
                     break;
 
@@ -149,13 +136,10 @@ public class mainInmueble {
                     System.out
                             .println("Ha marcado que es un vendedor. ¿Quiere continuar el proceso? \n(1) SI \n(2) NO");
                     opcion = sc.nextInt();
-                    while (opcion != 1 && opcion != 2) {
-                        System.out.println("Introduzca una opción válida");
-                        opcion = sc.nextInt();
-                    }
+                    opcion = validarOpcion(sc, opcion);
 
                     if (opcion == 1) {
-                        soyVendedor();
+                        soyVendedor(sc);
                     } else if (opcion == 2) {
                         break;
                     }
@@ -175,9 +159,8 @@ public class mainInmueble {
         } while (opcion >= 1 && opcion < 5);
     }
 
-    private static void soyVendedor() {
+    private static void soyVendedor(Scanner sc) {
 
-        Scanner sc = new Scanner(System.in);
         int opcion;
 
         System.out.println(
@@ -195,17 +178,17 @@ public class mainInmueble {
             switch (opcion) {
                 case 0:
 
-                    pedirInfoPiso();
+                    pedirInfoPiso(sc);
 
                     break;
                 case 1:
 
-                    pedirInfoPiso();
+                    pedirInfoPiso(sc);
 
                     break;
                 case 2:
 
-                    pedirInfoPiso();
+                    pedirInfoPiso(sc);
 
                     break;
                 case 3:
@@ -223,9 +206,8 @@ public class mainInmueble {
 
     }
 
-    private static void pedirInfoPiso() {
+    private static void pedirInfoPiso(Scanner sc) {
 
-        Scanner sc = new Scanner(System.in);
         int opcion;
 
         Piso piso = new Piso();
@@ -245,22 +227,17 @@ public class mainInmueble {
         piso.precioBase = sc.nextDouble();
         System.out.println("¿El piso es de segunda mano? \n(1) SI \n(2) NO");
         opcion = sc.nextInt();
-        while (opcion != 1 && opcion != 2) {
-            System.out.println("Introduzca una opción válida");
-            opcion = sc.nextInt();
-        }
+        opcion = validarOpcion(sc, opcion);
 
         if (opcion == 1) {
             piso.segundaMano = true;
         } else if (opcion == 2) {
             piso.segundaMano = false;
         }
+
         System.out.println("¿El piso tiene ascensor? \n(1) SI \n(2) NO");
         opcion = sc.nextInt();
-        while (opcion != 1 && opcion != 2) {
-            System.out.println("Introduzca una opción válida");
-            opcion = sc.nextInt();
-        }
+        opcion = validarOpcion(sc, opcion);
 
         if (opcion == 1) {
             piso.setTieneAscensor(true);
@@ -277,6 +254,16 @@ public class mainInmueble {
         System.out.println("Gracias por confiar en nosotros. Le dejamos nuevamente en el menú de inmobiliaria.");
         ;
 
+    }
+
+    private static int validarOpcion(Scanner sc, int opcion) {
+
+        while (opcion != 1 && opcion != 2) {
+            System.out.println("Introduzca una opción válida");
+            opcion = sc.nextInt();
+        }
+
+        return opcion;
     }
 
 }
