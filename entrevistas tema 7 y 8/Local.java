@@ -16,8 +16,8 @@ public class Local extends Inmueble {
     }
 
     public Local(double metrosCuadrados, double precioBase, String direccion, String nombreDueno, String contactoDueno,
-            boolean segundaMano, String actividad, boolean tieneEscaparate) {
-        super(metrosCuadrados, precioBase, direccion, nombreDueno, contactoDueno, segundaMano);
+            boolean segundaMano, boolean vendido, String actividad, boolean tieneEscaparate) {
+        super(metrosCuadrados, precioBase, direccion, nombreDueno, contactoDueno, segundaMano, vendido);
         this.actividad = actividad;
         this.tieneEscaparate = tieneEscaparate;
     }

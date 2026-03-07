@@ -7,6 +7,7 @@ public class Inmueble {
     protected String contactoDueno;
     protected boolean segundaMano;
     protected double precio;
+    protected boolean vendido;
 
     public Inmueble() {
         this.metrosCuadrados = 0;
@@ -16,11 +17,12 @@ public class Inmueble {
         this.contactoDueno = "Desconocido";
         this.segundaMano = false;
         this.precio = 0;
+        this.vendido = false;
     }
 
     public Inmueble(double metrosCuadrados, double precioBase, String direccion, String nombreDueno,
             String contactoDueno,
-            boolean segundaMano) {
+            boolean segundaMano, boolean vendido) {
 
         this.metrosCuadrados = metrosCuadrados;
         this.precioBase = precioBase;
@@ -28,6 +30,7 @@ public class Inmueble {
         this.nombreDueno = nombreDueno;
         this.contactoDueno = contactoDueno;
         this.segundaMano = segundaMano;
+        this.vendido = vendido;
     }
 
     public double calcularPrecioFinal() {
@@ -123,6 +126,14 @@ public class Inmueble {
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    public boolean isVendido() {
+        return vendido;
+    }
+
+    public void setVendido(boolean vendido) {
+        this.vendido = vendido;
     }
 
 }

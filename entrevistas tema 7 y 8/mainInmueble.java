@@ -16,8 +16,9 @@ public class mainInmueble {
 
     private static void mostrarPiso(Scanner sc) {
 
-        Inmueble piso = new Piso(150, 2300, "Calle Turquesa, 23, Bajo Izquierda", "Alejandro Perez", "642080864",
+        Inmueble piso = new Piso(150, 230, "Calle Turquesa, 23, Bajo Izquierda", "Alejandro Perez", "642080864", false,
                 false, 3, true);
+
         piso.mostrarInformacion();
         System.out.println("El precio es: " + piso.calcularPrecioFinal() + " euros");
 
@@ -30,11 +31,27 @@ public class mainInmueble {
 
         }
 
+        System.out.println("¿Quiere reservar el inmueble? \n(1) SI \n(2) NO");
+        int opcionCompra = sc.nextInt();
+        opcionCompra = validarOpcion(sc, opcionCompra);
+
+        if (opcionCompra == 1) {
+            System.out.println(
+                    "Enhorabuena, ha hecho una reserva del inmueble. Nos pondremos en contacto contigo pronto");
+            piso.vendido();
+            // piso.setVendido(true);
+
+        }
+
     }
 
     private static void mostrarCasa(Scanner sc) {
 
-        Inmueble casa = new Casa(235, 3000, "Calle Amatista, 36", "Pepa Garcia", "684016573", true, true, 2, false);
+        Inmueble casa = new Casa(235, 3000, "Calle Amatista, 36", "Pepa García", "684016573", true, false, true, 2,
+                true);
+
+        // 235, 3000, "Calle Amatista, 36", "Pepa Garcia", "684016573", true, true, 2,
+        // false, false
         casa.mostrarInformacion();
         System.out.println("El precio es: " + casa.calcularPrecioFinal() + " euros");
 
@@ -45,13 +62,28 @@ public class mainInmueble {
         if (opcion == 1) {
             casa.llamarDueno();
 
+        } else {
+            return;
+        }
+
+        System.out.println("¿Quiere reservar el inmueble? \n(1) SI \n(2) NO");
+        int opcionCompra = sc.nextInt();
+        opcionCompra = validarOpcion(sc, opcionCompra);
+
+        if (opcionCompra == 1) {
+            System.out.println(
+                    "Enhorabuena, ha hecho una reserva del inmueble. Nos pondremos en contacto contigo pronto");
+            casa.vendido();
+            // casa.setVendido(true);
+
         }
     }
 
     private static void mostrarLocal(Scanner sc) {
 
-        Inmueble local = new Local(80, 500, "Calle San Fernando, 45", "Jose Perez", "654326754", true, "Restaurante",
-                true);
+        Inmueble local = new Local(80, 500, "Calle San Fernando, 45", "Jose Perez", "654326754", false, false,
+                "Restaurante", true);
+
         local.mostrarInformacion();
         System.out.println("El precio es: " + local.calcularPrecioFinal() + " euros");
 
@@ -61,6 +93,17 @@ public class mainInmueble {
 
         if (opcion == 1) {
             local.llamarDueno();
+
+        }
+        System.out.println("¿Quiere reservar el inmueble? \n(1) SI \n(2) NO");
+        int opcionCompra = sc.nextInt();
+        opcionCompra = validarOpcion(sc, opcionCompra);
+
+        if (opcionCompra == 1) {
+            System.out.println(
+                    "Enhorabuena, ha hecho una reserva del inmueble. Nos pondremos en contacto contigo pronto");
+            local.vendido();
+            // local.setVendido(true);
 
         }
 
