@@ -333,7 +333,7 @@ public class mainDefinitivo {
         System.out.println("Escriba la dirección del inmueble");
         String direccion = sc.nextLine();
         direccion = validarDireccion(sc, direccion);
-        inmueble.setDireccion(sc.nextLine());
+        inmueble.setDireccion(direccion);
 
         do {
             System.out.println("Introduzca los metros cuadrados de su inmueble");
