@@ -52,7 +52,7 @@ public class mainDefinitivo {
                             UsuarioSimulacion(sc);
                             System.out.println(
                                     "Enhorabuena, ha hecho una reserva del inmueble. Nos pondremos en contacto contigo pronto");
-                            casa = Inmueble.vendido();
+                            casa = null;
 
                         }
 
@@ -77,7 +77,7 @@ public class mainDefinitivo {
                             UsuarioSimulacion(sc);
                             System.out.println(
                                     "Enhorabuena, ha hecho una reserva del inmueble. Nos pondremos en contacto contigo pronto");
-                            piso = Inmueble.vendido();
+                            piso = null;
 
                         }
 
@@ -90,7 +90,7 @@ public class mainDefinitivo {
                             UsuarioSimulacion(sc);
                             System.out.println(
                                     "Enhorabuena, ha hecho una reserva del inmueble. Nos pondremos en contacto contigo pronto");
-                            piso2 = Inmueble.vendido();
+                            piso2 = null;
 
                         }
 
@@ -113,7 +113,7 @@ public class mainDefinitivo {
                             UsuarioSimulacion(sc);
                             System.out.println(
                                     "Enhorabuena, ha hecho una reserva del inmueble. Nos pondremos en contacto contigo pronto");
-                            local = Inmueble.vendido();
+                            local = null;
 
                         }
 

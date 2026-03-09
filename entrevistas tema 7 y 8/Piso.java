@@ -10,6 +10,7 @@ public class Piso extends Inmueble {
     }
 
     public Piso(int planta, boolean tieneAscensor) {
+
         setPlanta(planta);
         this.tieneAscensor = tieneAscensor;
     }
@@ -34,7 +35,6 @@ public class Piso extends Inmueble {
         } else {
             this.planta = planta;
         }
-        this.planta = planta;
     }
 
     public boolean isTieneAscensor() {

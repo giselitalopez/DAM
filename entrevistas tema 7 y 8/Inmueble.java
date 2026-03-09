@@ -94,7 +94,6 @@ public class Inmueble {
         } else {
             this.precioBase = precioBase;
         }
-        this.precioBase = precioBase;
     }
 
     public String getDireccion() {
@@ -131,11 +130,11 @@ public class Inmueble {
 
     public void setContactoDueno(String contactoDueno) {
 
-        if (nombreDueno.length() < 9) {
+        if (contactoDueno.length() < 9) {
             System.out.println("Su numero tiene menos de 9 digitos");
-        } else if (nombreDueno.length() > 9) {
+        } else if (contactoDueno.length() > 9) {
             System.out.println("Su numero tiene más de 9 digitos");
-        } else if (nombreDueno.isBlank()) {
+        } else if (contactoDueno.isBlank()) {
             System.out.println("No puede dejar el número vacío");
         } else {
             this.contactoDueno = contactoDueno;
