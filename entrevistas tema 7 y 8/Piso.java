@@ -10,7 +10,7 @@ public class Piso extends Inmueble {
     }
 
     public Piso(int planta, boolean tieneAscensor) {
-        this.planta = planta;
+        setPlanta(planta);
         this.tieneAscensor = tieneAscensor;
     }
 
@@ -18,7 +18,7 @@ public class Piso extends Inmueble {
             boolean segundaMano, int planta, boolean tieneAscensor) {
 
         super(metrosCuadrados, precioBase, direccion, nombreDueno, contactoDueno, segundaMano);
-        this.planta = planta;
+        setPlanta(planta);
         this.tieneAscensor = tieneAscensor;
     }
 
@@ -27,6 +27,13 @@ public class Piso extends Inmueble {
     }
 
     public void setPlanta(int planta) {
+
+        if (planta <= 0) {
+            System.out.println(
+                    "El número de planta no puede ser 0 ni menor que este. Si no tiene plantas, la planta baja se indica como '1");
+        } else {
+            this.planta = planta;
+        }
         this.planta = planta;
     }
 

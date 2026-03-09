@@ -12,7 +12,7 @@ public class Casa extends Inmueble {
 
     public Casa(boolean tienePatio, int plantas, boolean esAdosado) {
         this.tienePatio = tienePatio;
-        this.plantas = plantas;
+        setPlantas(plantas);
         this.esAdosado = esAdosado;
     }
 
@@ -21,7 +21,7 @@ public class Casa extends Inmueble {
 
         super(metrosCuadrados, precioBase, direccion, nombreDueno, contactoDueno, segundaMano);
         this.tienePatio = tienePatio;
-        this.plantas = plantas;
+        setPlantas(plantas);
         this.esAdosado = esAdosado;
     }
 
@@ -38,7 +38,13 @@ public class Casa extends Inmueble {
     }
 
     public void setPlantas(int plantas) {
-        this.plantas = plantas;
+
+        if (plantas <= 0) {
+            System.out.println("El número de plantas no puede ser 0 ni menor que este");
+        } else {
+            this.plantas = plantas;
+        }
+
     }
 
     public boolean isEsAdosado() {

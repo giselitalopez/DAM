@@ -18,7 +18,8 @@ public class Local extends Inmueble {
     public Local(double metrosCuadrados, double precioBase, String direccion, String nombreDueno, String contactoDueno,
             boolean segundaMano, String actividad, boolean tieneEscaparate) {
         super(metrosCuadrados, precioBase, direccion, nombreDueno, contactoDueno, segundaMano);
-        this.actividad = actividad;
+
+        setActividad(actividad);
         this.tieneEscaparate = tieneEscaparate;
     }
 
@@ -27,7 +28,12 @@ public class Local extends Inmueble {
     }
 
     public void setActividad(String actividad) {
-        this.actividad = actividad;
+
+        if (actividad.isBlank()) {
+            System.out.println("No puede dejar la actividad vacía");
+        } else {
+            this.actividad = actividad;
+        }
     }
 
     public boolean isTieneEscaparate() {
