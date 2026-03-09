@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class main {
+public class mainDefinitivo {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -128,7 +128,7 @@ public class main {
                     break;
             }
 
-        } while (opcion >= 1 && opcion < 5);
+        } while (opcion >= 1 && opcion <= 4);
 
     }
 
