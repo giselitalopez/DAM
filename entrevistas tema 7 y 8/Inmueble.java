@@ -23,12 +23,11 @@ public class Inmueble {
             String contactoDueno,
             boolean segundaMano) {
 
-        this.metrosCuadrados = metrosCuadrados;
         setMetrosCuadrados(metrosCuadrados);
-        this.precioBase = precioBase;
+        setPrecioBase(precioBase);
         this.direccion = direccion;
         this.nombreDueno = nombreDueno;
-        this.contactoDueno = contactoDueno;
+        setContactoDueno(contactoDueno);
         this.segundaMano = segundaMano;
 
     }
@@ -111,6 +110,7 @@ public class Inmueble {
     }
 
     public void setNombreDueno(String nombreDueno) {
+
         this.nombreDueno = nombreDueno;
     }
 
@@ -119,7 +119,15 @@ public class Inmueble {
     }
 
     public void setContactoDueno(String contactoDueno) {
-        this.contactoDueno = contactoDueno;
+
+        if (nombreDueno.length() < 9) {
+            System.out.println("Su numero tiene menos de 9 digitos");
+        } else if (nombreDueno.length() > 9) {
+            System.out.println("Su numero tiene más de 9 digitos");
+        } else {
+            this.contactoDueno = contactoDueno;
+        }
+
     }
 
     public boolean isSegundaMano() {
