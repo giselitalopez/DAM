@@ -228,7 +228,7 @@ public class main {
 
     private static String validadorNombre(Scanner sc, String nombre) {
 
-        while (nombre.isEmpty() || nombre.isBlank()) {
+        while (nombre.isEmpty()) {
             System.out.println("Escriba su nombre correctamente");
             nombre = sc.nextLine();
         }
@@ -263,16 +263,18 @@ public class main {
 
         System.out.println("Escriba su nombre");
         String nombre = sc.nextLine();
-        validadorNombre(sc, nombre);
+        nombre = validadorNombre(sc, nombre);
         System.out.println("Escriba su número de teléfono");
-        String correo = sc.nextLine();
-        validarNumeroTelefono(sc, correo);
+        String numero = sc.nextLine();
+        numero = validarNumeroTelefono(sc, numero);
 
         System.out.println("¡Gracias por confiar en nosotros!");
 
     }
 
     private static void pedirDatosComunesVendedor(Scanner sc, Inmueble inmueble) {
+
+        sc.nextLine();
 
         int opcion;
 
@@ -302,6 +304,8 @@ public class main {
 
     private static void pedirDatosEspecifPiso(Scanner sc, Piso piso) {
 
+        sc.nextLine();
+
         int opcion;
 
         System.out.println("¿Qué número de planta es? Si es planta baja, ponga '0'");
@@ -326,6 +330,8 @@ public class main {
     }
 
     private static void pedirDatosEspecifCasa(Scanner sc, Casa casa) {
+
+        sc.nextLine();
 
         int opcion;
 
@@ -363,7 +369,12 @@ public class main {
 
     private static void pedirDatosEspecifLocal(Scanner sc, Local local) {
 
+        sc.nextLine();
+
         int opcion;
+
+        System.out.println("¿Qué actividad realiza en el local?");
+        local.setActividad(sc.nextLine());
 
         System.out.println("¿El local tiene escaparate? \n(1) SI \n(2) NO");
         opcion = sc.nextInt();
