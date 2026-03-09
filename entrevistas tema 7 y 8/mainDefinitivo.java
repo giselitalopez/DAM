@@ -13,7 +13,7 @@ public class mainDefinitivo {
         int opcion;
         int opcionCompra;
 
-        Inmueble piso = new Piso(150, 230, "Calle Turquesa, 23, Tercero Izquierda", "Alejandro Perez", "642080864",
+        Inmueble piso = new Piso(0, 230, "Calle Turquesa, 23, Tercero Izquierda", "Alejandro Perez", "642080864",
                 false,
                 4, true);
         Inmueble piso2 = new Piso(100, 68, "Calle Amatista, 16, Primero Derecha", "Ana García", "684016573", true,
