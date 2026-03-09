@@ -24,6 +24,7 @@ public class Inmueble {
             boolean segundaMano) {
 
         this.metrosCuadrados = metrosCuadrados;
+        setMetrosCuadrados(metrosCuadrados);
         this.precioBase = precioBase;
         this.direccion = direccion;
         this.nombreDueno = nombreDueno;
