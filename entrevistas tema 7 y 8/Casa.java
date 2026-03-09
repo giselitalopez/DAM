@@ -17,9 +17,9 @@ public class Casa extends Inmueble {
     }
 
     public Casa(double metrosCuadrados, double precioBase, String direccion, String nombreDueno, String contactoDueno,
-            boolean segundaMano, boolean vendido, boolean tienePatio, int plantas, boolean esAdosado) {
+            boolean segundaMano, boolean tienePatio, int plantas, boolean esAdosado) {
 
-        super(metrosCuadrados, precioBase, direccion, nombreDueno, contactoDueno, segundaMano, vendido);
+        super(metrosCuadrados, precioBase, direccion, nombreDueno, contactoDueno, segundaMano);
         this.tienePatio = tienePatio;
         this.plantas = plantas;
         this.esAdosado = esAdosado;
