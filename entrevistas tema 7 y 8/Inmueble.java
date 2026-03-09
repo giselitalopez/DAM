@@ -25,8 +25,8 @@ public class Inmueble {
 
         setMetrosCuadrados(metrosCuadrados);
         setPrecioBase(precioBase);
-        this.direccion = direccion;
-        this.nombreDueno = nombreDueno;
+        setDireccion(direccion);
+        setNombreDueno(nombreDueno);
         setContactoDueno(contactoDueno);
         this.segundaMano = segundaMano;
 
@@ -102,7 +102,13 @@ public class Inmueble {
     }
 
     public void setDireccion(String direccion) {
-        this.direccion = direccion;
+
+        if (direccion.isBlank()) {
+            System.out.println("No puede dejar la dirección vacía");
+        } else {
+
+            this.direccion = direccion;
+        }
     }
 
     public String getNombreDueno() {
@@ -111,7 +117,12 @@ public class Inmueble {
 
     public void setNombreDueno(String nombreDueno) {
 
-        this.nombreDueno = nombreDueno;
+        if (nombreDueno.isBlank()) {
+            System.out.println("No puede dejar el nombre vacío");
+        } else {
+
+            this.nombreDueno = nombreDueno;
+        }
     }
 
     public String getContactoDueno() {
@@ -124,6 +135,8 @@ public class Inmueble {
             System.out.println("Su numero tiene menos de 9 digitos");
         } else if (nombreDueno.length() > 9) {
             System.out.println("Su numero tiene más de 9 digitos");
+        } else if (nombreDueno.isBlank()) {
+            System.out.println("No puede dejar el número vacío");
         } else {
             this.contactoDueno = contactoDueno;
         }

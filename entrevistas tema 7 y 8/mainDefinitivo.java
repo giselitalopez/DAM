@@ -252,7 +252,7 @@ public class mainDefinitivo {
 
     private static String validadorNombre(Scanner sc, String nombre) {
 
-        while (nombre.isEmpty()) {
+        while (nombre.isBlank()) {
             System.out.println("Escriba su nombre correctamente");
             nombre = sc.nextLine();
         }
@@ -267,8 +267,8 @@ public class mainDefinitivo {
                 System.out.println("Su numero tiene menos de 9 digitos");
             } else if (numero.length() > 9) {
                 System.out.println("Su numero tiene más de 9 digitos");
-            } else if (numero.isEmpty() || numero.isBlank()) {
-                System.out.println("Escriba su numero sin espacios");
+            } else if (numero.isBlank()) {
+                System.out.println("No puede dejar el número vacío");
             } else {
                 System.out.println("Error desconocido, escriba su número nuevamente");
             }
