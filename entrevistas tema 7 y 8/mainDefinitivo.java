@@ -13,8 +13,12 @@ public class mainDefinitivo {
         int opcion;
         int opcionCompra;
 
-        Inmueble piso = new Piso(150, 230, "Calle Turquesa, 23, Bajo Izquierda", "Alejandro Perez", "642080864", false,
+        Inmueble piso = new Piso(150, 230, "Calle Turquesa, 23, Tercero Izquierda", "Alejandro Perez", "642080864",
+                false,
                 3, true);
+        Inmueble piso2 = new Piso(100, 68, "Calle Amatista, 16, Primero Derecha", "Ana García", "684016573", true,
+                1, false);
+
         Inmueble casa = new Casa(235, 3000, "Calle Amatista, 36", "Pepa García", "684016573", true, true, 2,
                 true);
         Inmueble local = new Local(80, 500, "Calle San Fernando, 45", "Jose Perez", "654326754", false,
@@ -58,7 +62,7 @@ public class mainDefinitivo {
 
                 case 2:
 
-                    if (piso == null) {
+                    if (piso == null && piso2 == null) {
                         System.out.println(
                                 "Lo sentimos, de momento no hay ningún piso a la venta. Pronto tendremos más novedades");
 
@@ -74,6 +78,19 @@ public class mainDefinitivo {
                             System.out.println(
                                     "Enhorabuena, ha hecho una reserva del inmueble. Nos pondremos en contacto contigo pronto");
                             piso = Inmueble.vendido();
+
+                        }
+
+                        mostrarPiso2(sc, piso2);
+                        System.out.println("¿Quiere reservar el inmueble? \n(1) SI \n(2) NO");
+                        opcionCompra = sc.nextInt();
+                        opcionCompra = validarOpcion(sc, opcionCompra);
+
+                        if (opcionCompra == 1) {
+                            UsuarioSimulacion(sc);
+                            System.out.println(
+                                    "Enhorabuena, ha hecho una reserva del inmueble. Nos pondremos en contacto contigo pronto");
+                            piso2 = Inmueble.vendido();
 
                         }
 
@@ -128,7 +145,7 @@ public class mainDefinitivo {
                     break;
             }
 
-        } while (opcion >= 1 && opcion <= 4);
+        } while (opcion != 5);
 
     }
 
@@ -136,8 +153,15 @@ public class mainDefinitivo {
 
         piso.mostrarInformacion();
         System.out.println("El precio es: " + piso.calcularPrecioFinal() + " euros");
-
         piso.llamarDueno();
+
+    }
+
+    private static void mostrarPiso2(Scanner sc, Inmueble piso2) {
+
+        piso2.mostrarInformacion();
+        System.out.println("El precio es: " + piso2.calcularPrecioFinal() + " euros");
+        piso2.llamarDueno();
 
     }
 
@@ -212,7 +236,7 @@ public class mainDefinitivo {
                     break;
             }
 
-        } while (opcion >= 0 && opcion < 4);
+        } while (opcion != 4);
 
     }
 
