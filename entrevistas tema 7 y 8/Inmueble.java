@@ -35,12 +35,12 @@ public class Inmueble {
     public double calcularPrecioFinal() {
 
         double calculo = precioBase * metrosCuadrados;
-        double bajadaPrecioSegundaMano = precioBase * 0.05;
-        double resultadoBajadaPrecio = precioBase - bajadaPrecioSegundaMano;
+        double bajadaPrecioSegundaMano = calculo * 0.05;
+        double resultadoBajadaPrecio = calculo - bajadaPrecioSegundaMano;
 
         if (segundaMano) {
 
-            this.precio = resultadoBajadaPrecio * metrosCuadrados;
+            this.precio = resultadoBajadaPrecio;
             return this.precio;
 
         } else {
@@ -67,9 +67,9 @@ public class Inmueble {
         System.out.println("Número de teléfono: " + contactoDueno);
     }
 
-    // protected static Inmueble vendido() {
-    // return null;
-    // }
+    protected static Inmueble vendido() {
+        return null;
+    }
 
     public double getMetrosCuadrados() {
         return metrosCuadrados;

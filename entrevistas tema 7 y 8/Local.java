@@ -11,7 +11,7 @@ public class Local extends Inmueble {
     }
 
     public Local(String actividad, boolean tieneEscaparate) {
-        this.actividad = actividad;
+        setActividad(actividad);
         this.tieneEscaparate = tieneEscaparate;
     }
 
