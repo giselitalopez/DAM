@@ -57,4 +57,9 @@ public class RadioDespertador extends SintonizadorFM {
 
     }
 
+    @Override
+    public String toString() {
+
+    }
+
 }
